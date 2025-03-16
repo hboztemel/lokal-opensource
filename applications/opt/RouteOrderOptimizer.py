@@ -41,3 +41,16 @@ class RouteOrderOptimizer:
             self.divide_by_indicator()
             self.select_nearest()
         return self.result_df.reset_index(drop=True)
+
+
+# Application
+# if predictions is a DataFrame with recommended place names for the itinerary,
+
+# ...        
+        if not predictions.empty:
+            optimizer = RouteOrderOptimizer(predictions, reference_point, n_points)
+            optimized_route = optimizer.iterate_selection()
+            response_data['optimized_route'] = optimized_route.to_dict(orient='records')
+# ...
+
+# The column "optimized_route" is the ensured sorted of the list according to the customer inital position.
