@@ -1,4 +1,4 @@
-# Google Places API Data Acqusition and Cleaning Procedure
+# Google Places API Data Acqusition and Cleaning Procedure (10/06/2025)
 
 This procedure outlines the complete workflow for collecting and refining location data using the Google Places API, aiming to produce a balanced and high-quality dataset.
 
