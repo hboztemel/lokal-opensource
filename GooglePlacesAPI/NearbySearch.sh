@@ -71,7 +71,7 @@ while IFS=',' read -r lat long radius; do
 
     # Handle empty response
     if [[ $(echo "$RESPONSE" | jq '.places | length') -eq 0 ]]; then
-        echo "⚠️ No results for circle $i (lat: $lat, long: $long)"
+        echo "No results for circle $i (lat: $lat, long: $long)"
     fi
 
     sleep 0.3
