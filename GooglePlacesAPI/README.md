@@ -88,3 +88,5 @@ A cleaned, scored, and category-balanced list of 150 top POIs per city, suitable
 - Bash (for `.sh` scripts)
 
 ---
+
+For further documentation, refer [https://developers.google.com/maps/documentation/places/web-service/op-overview](URL).
