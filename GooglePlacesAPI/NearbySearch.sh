@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # CONFIGURATION
-API_KEY="AIzaSyDhq93lq6GSQx0f3hxa9RVnbrKpYDSnZQk"
+API_KEY="your_api_key"
 CIRCLES_CSV="./Circles.csv"
 TYPES_FILE="./Definitions.txt"
 OUTPUT_CSV="./np_output.csv"
