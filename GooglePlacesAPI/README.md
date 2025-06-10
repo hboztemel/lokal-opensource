@@ -15,7 +15,7 @@ The initial dataset is gathered using a NearbySearch query across predefined cir
 The following operations are performed:
 
 1. **Remove closed places**  
-   - Drop any row where `business_status == "TEMPORARILY_CLOSED"`.
+   - Drop any row where `business_status == "CLOSED_TEMPORARILY"`.
 
 2. **Remove missing values**  
    - Drop rows with null or missing values in essential columns: `latitude`, `longitude`, `rating`, `reviews`.
