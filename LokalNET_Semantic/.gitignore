@@ -1,5 +1,6 @@
 metadata.csv
-embeddings.npy
+embeddings1.npy
+embeddings5.npy
 
 venv/
 __pycache__/
