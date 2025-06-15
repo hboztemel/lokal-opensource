@@ -6,13 +6,29 @@ import numpy as np
 from sentence_transformers import SentenceTransformer, util
 from sklearn.preprocessing import MinMaxScaler
 from geopy.distance import geodesic
+from functools import lru_cache
 
 app = FastAPI()
 # model = SentenceTransformer("sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2") #Heavier model
-model = SentenceTransformer("sentence-transformers/paraphrase-MiniLM-L6-v2") #Lighter model
+# model = SentenceTransformer("sentence-transformers/paraphrase-MiniLM-L6-v2") #Lighter model
 
-metadata = pd.read_csv("metadata.csv")
-embeddings = np.load("embeddings5_2.npy")
+# metadata = pd.read_csv("metadata.csv")
+# embeddings = np.load("embeddings5_2.npy")
+
+# Lazy loading with cache
+@lru_cache(maxsize=1)
+def get_model():
+    # return SentenceTransformer"sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2") #Heavier model
+    return SentenceTransformer("sentence-transformers/paraphrase-MiniLM-L6-v2") #Lighter model
+
+@lru_cache(maxsize=1)
+def load_metadata():
+    return pd.read_csv("metadata.csv")
+
+@lru_cache(maxsize=1)
+def load_embeddings():
+    # return np.load("embeddings5.npy") #Heavier model
+    return np.load("embeddings1.npy") #Lighter model
 
 class RecommendationRequest(BaseModel):
     query: str
