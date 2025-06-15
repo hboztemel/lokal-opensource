@@ -8,7 +8,8 @@ from sklearn.preprocessing import MinMaxScaler
 from geopy.distance import geodesic
 
 app = FastAPI()
-model = SentenceTransformer("sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2")
+# model = SentenceTransformer("sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2") #Heavier model
+model = SentenceTransformer("sentence-transformers/paraphrase-MiniLM-L6-v2") #Lighter model
 
 metadata = pd.read_csv("metadata.csv")
 embeddings = np.load("embeddings5_2.npy")
