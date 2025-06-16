@@ -43,6 +43,11 @@ class RecommendationRequest(BaseModel):
 
 @app.post("/recommend")
 def recommend(req: RecommendationRequest):
+
+    model = get_model()
+    metadata = load_metadata()
+    embeddings = load_embeddings()
+
     city_df = metadata[
         (metadata["city"] == req.city) &
         (metadata["primary_type"].notna()) &
