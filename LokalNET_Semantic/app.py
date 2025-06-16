@@ -90,3 +90,8 @@ def recommend(req: RecommendationRequest):
     result = city_df[columns].sort_values(by="final_score", ascending=False).head(req.top_n)
 
     return result.to_dict(orient="records")
+
+
+@app.get("/")
+def root():
+    return {"status": "API is running"}
