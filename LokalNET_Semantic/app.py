@@ -18,8 +18,8 @@ app = FastAPI()
 # Lazy loading with cache
 @lru_cache(maxsize=1)
 def get_model():
-    # return SentenceTransformer"sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2") #Heavier model
-    return SentenceTransformer("sentence-transformers/paraphrase-MiniLM-L6-v2") #Lighter model
+    return SentenceTransformer"sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2") #Heavier model
+    # return SentenceTransformer("sentence-transformers/paraphrase-MiniLM-L6-v2") #Lighter model
 
 @lru_cache(maxsize=1)
 def load_metadata():
@@ -27,8 +27,8 @@ def load_metadata():
 
 @lru_cache(maxsize=1)
 def load_embeddings():
-    # return np.load("embeddings5.npy") #Heavier model
-    return np.load("embeddings1.npy") #Lighter model
+    return np.load("embeddings5.npy") #Heavier model
+    # return np.load("embeddings1.npy") #Lighter model
 
 class RecommendationRequest(BaseModel):
     query: str
