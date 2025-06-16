@@ -18,7 +18,7 @@ app = FastAPI()
 # Lazy loading with cache
 @lru_cache(maxsize=1)
 def get_model():
-    return SentenceTransformer"sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2") #Heavier model
+    return SentenceTransformer("sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2") #Heavier model
     # return SentenceTransformer("sentence-transformers/paraphrase-MiniLM-L6-v2") #Lighter model
 
 @lru_cache(maxsize=1)
